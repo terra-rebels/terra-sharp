@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TerraSharp", "TerraSharp\TerraSharp.csproj", "{298F5E51-A6EE-4E1B-99AF-DF23E35C29A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TerraSharpTestExecutable", "TerraSharpTestExecutable\TerraSharpTestExecutable.csproj", "{AE2F1AA9-8DF1-405E-A562-3A66953E6114}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{298F5E51-A6EE-4E1B-99AF-DF23E35C29A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{298F5E51-A6EE-4E1B-99AF-DF23E35C29A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{298F5E51-A6EE-4E1B-99AF-DF23E35C29A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE2F1AA9-8DF1-405E-A562-3A66953E6114}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE2F1AA9-8DF1-405E-A562-3A66953E6114}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE2F1AA9-8DF1-405E-A562-3A66953E6114}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE2F1AA9-8DF1-405E-A562-3A66953E6114}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

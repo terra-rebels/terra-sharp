@@ -27,5 +27,8 @@ namespace TerraSharp.Globals
     {
         protected TerraSharpException AccountTypeInvalidException = new TerraSharpException("AccountTypeInvalidException", 0x80000000,
             "Account type %s not recognized");
+
+        protected TerraSharpException PubkeyTypeInvalidException = new TerraSharpException("AccountTypeInvalidException", 0x80000001,
+            "Pubkey type %s not recognized");
     }
 }
