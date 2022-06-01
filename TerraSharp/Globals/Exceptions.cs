@@ -25,10 +25,18 @@ namespace TerraSharp.Globals
     }
     public class Exceptions
     {
-        protected TerraSharpException AccountTypeInvalidException = new TerraSharpException("AccountTypeInvalidException", 0x80000000,
+        public static TerraSharpException AccountTypeInvalidException = new TerraSharpException("AccountTypeInvalidException", 0x80000000,
             "Account type %s not recognized");
 
-        protected TerraSharpException PubkeyTypeInvalidException = new TerraSharpException("AccountTypeInvalidException", 0x80000001,
+        public static TerraSharpException PubkeyTypeInvalidException = new TerraSharpException("AccountTypeInvalidException", 0x80000001,
             "Pubkey type %s not recognized");
+
+        public static TerraSharpException APIParamsTypeInvalidException = new TerraSharpException("APIParamsTypeInvalidException", 0x80000002,
+            "APIParams Type %s is not valid. Type must be String, Double or NULL.");
+
+        public Exceptions()
+        {
+
+        }
     }
 }
