@@ -26,17 +26,15 @@ namespace TerraSharp.Globals
     public class Exceptions
     {
         public static TerraSharpException AccountTypeInvalidException = new TerraSharpException("AccountTypeInvalidException", 0x80000000,
-            "Account type %s not recognized");
+            "Account type {0} not recognized");
 
         public static TerraSharpException PubkeyTypeInvalidException = new TerraSharpException("AccountTypeInvalidException", 0x80000001,
-            "Pubkey type %s not recognized");
+            "Pubkey type {0} not recognized");
 
         public static TerraSharpException APIParamsTypeInvalidException = new TerraSharpException("APIParamsTypeInvalidException", 0x80000002,
-            "APIParams Type %s is not valid. Type must be String, Double or NULL.");
+            "APIParams Type {0} is not valid. Type must be String, Double or NULL.");
+        public static TerraSharpException TypeInconcistencyException = new TerraSharpException("TypeInconcistencyException", 0x80000003,
+            "The type of {0} does not match the type of {1}. The type of {0} needs to be {2}.");
 
-        public Exceptions()
-        {
-
-        }
     }
 }
