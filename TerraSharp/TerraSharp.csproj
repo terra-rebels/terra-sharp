@@ -16,4 +16,40 @@
     <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Core\Authz\Authorizations\" />
+    <Folder Include="Core\Authz\Msgs\" />
+    <Folder Include="Core\Bank\Msgs\" />
+    <Folder Include="Core\Crisis\" />
+    <Folder Include="Core\Distrobution\Msgs\" />
+    <Folder Include="Core\Distrobution\Proposals\" />
+    <Folder Include="Core\Feegrant\Allowances\" />
+    <Folder Include="Core\Feegrant\Msgs\" />
+    <Folder Include="Core\Gov\Msgs\" />
+    <Folder Include="Core\Gov\Poposals\" />
+    <Folder Include="Core\IBCTransfer\Msgs\" />
+    <Folder Include="Core\IBC\Applications\Fee\Msgs\" />
+    <Folder Include="Core\IBC\Applications\InterchainAccount\Controller\" />
+    <Folder Include="Core\IBC\Applications\InterchainAccount\Host\" />
+    <Folder Include="Core\IBC\Applications\Transfer\V2\" />
+    <Folder Include="Core\IBC\Applications\Transfer\V1\Msgs\" />
+    <Folder Include="Core\IBC\Core\Channel\" />
+    <Folder Include="Core\IBC\Core\Commitment\" />
+    <Folder Include="Core\IBC\Msgs\Channel\" />
+    <Folder Include="Core\IBC\Msgs\Client\Tendermint\" />
+    <Folder Include="Core\IBC\Msgs\Connection\" />
+    <Folder Include="Core\IBC\Proposals\" />
+    <Folder Include="Core\Market\Msgs\" />
+    <Folder Include="Core\Oracle\Msgs\" />
+    <Folder Include="Core\Params\Proposals\" />
+    <Folder Include="Core\Slashing\Msgs\" />
+    <Folder Include="Core\Staking\Msgs\" />
+    <Folder Include="Core\Upgrade\Proposals\" />
+    <Folder Include="Core\Treasury\" />
+    <Folder Include="Core\Wasm\Msgs\" />
+    <Folder Include="Core\Wasm\Proposals\" />
+    <Folder Include="Extension\" />
+    <Folder Include="Key\" />
+  </ItemGroup>
+
 </Project>
