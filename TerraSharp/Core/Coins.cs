@@ -15,13 +15,35 @@ namespace TerraSharp.Core
 
         private Dictionary<string, Coins<T>> _coins { get; set; }
         private string denomination { get; set; }
+        private string name { get; set; }
 
-        public Coins(numeric<T> numerator, string denom)
+        public Coins(string n, numeric<T> numerator, string denom, params T[] args) : base()
         {
-            _coins = new Dictionary<string, Coins<T>>();
+            if(args.GetType() == typeof(Coins<T>))
+            {
+                _coins = new Dictionary<string, Coins<T>>();
+                foreach (Coins<T> c in (Coins<T>[])(object)args)
+                    _coins.Add(c.getName(), c);
+            }
+            else if(args.GetType() == typeof(string))
+            {
+                _coins = new Dictionary<string, Coins<T>>();
+                foreach (string s in (List<string>)(object)args)
+                    fromCommaSeperatedString(s, numerator);
+            }
+            else
+            {
+                _coins = new Dictionary<string, Coins<T>>();
+                Value = numerator.Value;
+                denomination = denom;
+                _coins.Add(n, this);
+            }
             Value = numerator.Value;
             denomination = denom;
+            name  = n;
         }
+
+        public string getName() => name;
 
         public string ToCommaSeperatedString()
         {
@@ -29,11 +51,9 @@ namespace TerraSharp.Core
         }
         public void fromCommaSeperatedString(string coins, numeric<T> numerator)
         {
-            //assume the dictionary is not cleared
-            _coins.Clear();
             foreach(string s in coins.Split(","))
             {
-                _coins.Add(s, new Coins<T>(numerator,""));
+                _coins.Add(s, new Coins<T>(s,numerator, ""));
             }
         }
         public string getDenomination() => denomination;
@@ -46,6 +66,18 @@ namespace TerraSharp.Core
             }
             return result.ToArray();
         }
+        public Coins<T> getByName(string name) => _coins.Where(x => x.Key == name).FirstOrDefault().Value;
+        public Coins<T>[] getByDenomination(string denom)
+        {
+            List<Coins<T>> _c = new List<Coins<T>>();
 
+            foreach(Coins<T> c in _coins.Values)
+            {
+                if(c.getDenomination() == denom)
+                    _c.Add(c);
+            }
+
+            return _c.ToArray();
+        }
     }
 }
