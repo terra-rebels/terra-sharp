@@ -13,7 +13,7 @@ namespace TerraSharp.Core
     {
         public T Value { get => Value; set => Value = value; }
 
-        private Dictionary<string, Coins<T>> _coins { get; set; }
+        private Dictionary<string, Coins<T>>? _coins { get; set; }
         private string denomination { get; set; }
         private string name { get; set; }
 
@@ -33,10 +33,9 @@ namespace TerraSharp.Core
             }
             else
             {
-                _coins = new Dictionary<string, Coins<T>>();
+                _coins = null;
                 Value = numerator.Value;
                 denomination = denom;
-                _coins.Add(n, this);
             }
             Value = numerator.Value;
             denomination = denom;
@@ -66,15 +65,18 @@ namespace TerraSharp.Core
             }
             return result.ToArray();
         }
-        public Coins<T> getByName(string name) => _coins.Where(x => x.Key == name).FirstOrDefault().Value;
-        public Coins<T>[] getByDenomination(string denom)
+        public Coins<T>? getByName(string name) => _coins.FirstOrDefault(x => x.Key == name).Value ?? default;
+        public Coins<T>[]? getByDenomination(string denom)
         {
             List<Coins<T>> _c = new List<Coins<T>>();
 
-            foreach(Coins<T> c in _coins.Values)
+            if(_coins != null)
             {
-                if(c.getDenomination() == denom)
-                    _c.Add(c);
+                foreach (Coins<T> c in _coins.Values)
+                {
+                    if (c.getDenomination() == denom)
+                        _c.Add(c);
+                }
             }
 
             return _c.ToArray();

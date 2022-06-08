@@ -7,7 +7,7 @@ using TerraSharp.Globals;
 
 namespace TerraSharp.Core.Auth
 {
-    public class Account
+    public abstract class Account
     {
         //Prototype Functions
         //
