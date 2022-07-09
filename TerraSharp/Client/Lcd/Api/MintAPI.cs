@@ -8,5 +8,10 @@ namespace TerraSharp.Client.Lcd.Api
 {
     public class MintAPI
     {
+        private readonly APIRequester apiRequester;
+        public MintAPI(APIRequester apiRequester)
+        {
+            this.apiRequester = apiRequester;
+        }
     }
 }

@@ -8,5 +8,10 @@ namespace TerraSharp.Client.Lcd.Api
 {
     public class TendermintAPI
     {
+        private readonly APIRequester apiRequester;
+        public TendermintAPI(APIRequester apiRequester)
+        {
+            this.apiRequester = apiRequester;
+        }
     }
 }

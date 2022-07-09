@@ -8,5 +8,10 @@ namespace TerraSharp.Client.Lcd.Api
 {
     public class TXAPI
     {
+        private readonly APIRequester apiRequester;
+        public TXAPI(APIRequester apiRequester)
+        {
+            this.apiRequester = apiRequester;
+        }
     }
 }

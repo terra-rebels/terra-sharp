@@ -8,5 +8,10 @@ namespace TerraSharp.Client.Lcd.Api
 {
     public class GovAPI
     {
+        private readonly APIRequester apiRequester;
+        public GovAPI(APIRequester apiRequester)
+        {
+            this.apiRequester = apiRequester;
+        }
     }
 }

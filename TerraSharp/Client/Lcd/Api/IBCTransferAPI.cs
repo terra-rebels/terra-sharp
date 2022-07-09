@@ -8,5 +8,10 @@ namespace TerraSharp.Client.Lcd.Api
 {
     public class IBCTransferAPI
     {
+        private readonly APIRequester apiRequester;
+        public IBCTransferAPI(APIRequester apiRequester)
+        {
+            this.apiRequester = apiRequester;
+        }
     }
 }

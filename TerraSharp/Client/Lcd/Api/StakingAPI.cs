@@ -8,5 +8,10 @@ namespace TerraSharp.Client.Lcd.Api
 {
     public class StakingAPI
     {
+        private readonly APIRequester apiRequester;
+        public StakingAPI(APIRequester apiRequester)
+        {
+            this.apiRequester = apiRequester;
+        }
     }
 }

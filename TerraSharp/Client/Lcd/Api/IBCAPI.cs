@@ -8,5 +8,10 @@ namespace TerraSharp.Client.Lcd.Api
 {
     public class IBCAPI
     {
+        private readonly APIRequester apiRequester;
+        public IBCAPI(APIRequester apiRequester)
+        {
+            this.apiRequester = apiRequester;
+        }
     }
 }

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace TerraSharp.Globals
 {
-    
     public class TerraSharpException : Exception
     {
         private string exceptionName { get; set; }

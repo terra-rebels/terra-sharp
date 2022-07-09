@@ -8,5 +8,10 @@ namespace TerraSharp.Client.Lcd.Api
 {
     public class TreasuryAPI
     {
+        private readonly APIRequester apiRequester;
+        public TreasuryAPI(APIRequester apiRequester)
+        {
+            this.apiRequester = apiRequester;
+        }
     }
 }

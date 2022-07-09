@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+	<metadata>
+		<id>TerraSharp.Lunc</id>
+		<version>1.0.0</version>
+		<title>TerraSharp.Lunc</title>
+		<authors>terra-rebels</authors>
+		<requireLicenseAcceptance>true</requireLicenseAcceptance>
+		<license type="expression">MIT</license>
+		<projectUrl>http://project_url_here_or_delete_this_line/</projectUrl>
+		<iconUrl>http://icon_url_here_or_delete_this_line/</iconUrl>
+		<description>Offical C# Library for Communicating with the Terra LUNC Blockchain</description>
+		<releaseNotes>Package Update</releaseNotes>
+		<copyright>2022</copyright>
+		<tags></tags>
+	</metadata>
+
+	<files>
+		<file src="bin\Release\netstandard2.0\TerraSharp.dll" target="lib\netstandard2.0\TerraSharp.dll"/>
+	</files>
+</package>

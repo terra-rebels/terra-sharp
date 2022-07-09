@@ -8,5 +8,10 @@ namespace TerraSharp.Client.Lcd.Api
 {
     public class SlashingAPI
     {
+        private readonly APIRequester apiRequester;
+        public SlashingAPI(APIRequester apiRequester)
+        {
+            this.apiRequester = apiRequester;
+        }
     }
 }

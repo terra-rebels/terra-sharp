@@ -8,5 +8,10 @@ namespace TerraSharp.Client.Lcd.Api
 {
     public class MarketAPI
     {
+        private readonly APIRequester apiRequester;
+        public MarketAPI(APIRequester apiRequester)
+        {
+            this.apiRequester = apiRequester;
+        }
     }
 }
