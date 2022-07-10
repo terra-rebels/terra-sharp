@@ -20,7 +20,7 @@ namespace TerraSharp.Client.Lcd
 
         public Task<AccountNumberArgs> AccountNumberAndSequence()
         {
-
+            this.lcd.auth.
         }
     }
 }

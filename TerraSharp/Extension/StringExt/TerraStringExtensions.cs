@@ -6,19 +6,6 @@ namespace TerraSharp.Extension.StringExt
     {
         public static bool ContainsIgnoreCase(this string source, string verify) => source.ToLower().Contains(verify.ToLower());
 
-        public static string FormatJson(this string json)
-        {
-            if (!string.IsNullOrWhiteSpace(json))
-            {
-                StringBuilder jsonFormatter = new StringBuilder();
-                jsonFormatter.Append(json);
-                jsonFormatter.Replace("\\", string.Empty);
-                return jsonFormatter.ToString().Trim('"');
-            }
-            else
-                return json;
-        }
-
         /// <summary>
         /// Return either the attribute string or a default value.
         /// </summary>
@@ -60,4 +47,6 @@ namespace TerraSharp.Extension.StringExt
         /// <returns></returns>
         public static Stream GetStreamFromText(string text) => new MemoryStream(GetBytesFromString(text));
     }
+
+    
 }

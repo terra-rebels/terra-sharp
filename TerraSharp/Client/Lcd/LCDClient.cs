@@ -10,26 +10,26 @@ namespace TerraSharp.Client.Lcd
 {
     public class LCDClient
     {
-        private readonly ILCDClientConfig config;
-        private readonly APIRequester apiRequester;
+        public readonly ILCDClientConfig config;
+        public readonly APIRequester apiRequester;
 
-        private readonly AuthAPI auth;
-        private readonly BankAPI bank;
-        private readonly DistributionAPI distribution;
-        private readonly FeeGrantAPI feeGrant;
-        private readonly GovAPI gov;
-        private readonly MarketAPI market;
-        private readonly MintAPI mint;
-        private readonly AuthzAPI authz;
-        private readonly OracleAPI oracle;
-        private readonly SlashingAPI slashing;
-        private readonly StakingAPI staking;
-        private readonly TendermintAPI tendermint;
-        private readonly TreasuryAPI treasury;
-        private readonly WasmAPI wasm;
-        private readonly TXAPI tx;
-        private readonly IBCTransferAPI ibcTransfer;
-        private readonly LCDUtils utils;
+        public readonly AuthAPI auth;
+        public readonly BankAPI bank;
+        public readonly DistributionAPI distribution;
+        public readonly FeeGrantAPI feeGrant;
+        public readonly GovAPI gov;
+        public readonly MarketAPI market;
+        public readonly MintAPI mint;
+        public readonly AuthzAPI authz;
+        public readonly OracleAPI oracle;
+        public readonly SlashingAPI slashing;
+        public readonly StakingAPI staking;
+        public readonly TendermintAPI tendermint;
+        public readonly TreasuryAPI treasury;
+        public readonly WasmAPI wasm;
+        public readonly TXAPI tx;
+        public readonly IBCTransferAPI ibcTransfer;
+        public readonly LCDUtils utils;
 
 
         public LCDClient(
@@ -74,5 +74,9 @@ namespace TerraSharp.Client.Lcd
             this.utils = utils;
         }
 
+        public Wallet CreateWallet(string key)
+        {
+            return new Wallet(this, key);
+        }
     }
 }
