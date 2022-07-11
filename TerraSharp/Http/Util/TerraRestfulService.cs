@@ -12,17 +12,14 @@ namespace TerraSharp.Http.Util
     public class TerraRestfulService
     {
         private JsonSerializerSettings serializerSettings;
-        private readonly ILogger logger;
         private readonly TerraHttpClientService clientService;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RestfulService"/> class.
         /// </summary>
         public TerraRestfulService(
-            TerraHttpClientService clientService,
-            ILogger logger) //HttpClient comes from the client that consumes it
+            TerraHttpClientService clientService) //HttpClient comes from the client that consumes it
         {
-            this.logger = logger;
             this.clientService = clientService;
 
             this.PrepareConverters();
@@ -236,7 +233,7 @@ namespace TerraSharp.Http.Util
         //inheritDoc
         public void ForceDisconnectHttpClient()
         {
-            this.htt.ForceDisconnectAllClients();
+       //     this.htt.ForceDisconnectAllClients();
         }
 
         public void PrepareHttpClientFromConsumer(HttpClient httpClient)

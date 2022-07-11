@@ -15,9 +15,9 @@ namespace TerraSharp.Client.Lcd.Api
             this.apiRequester = apiRequester;
         }
 
-        public Task<Account> GetAccountInfo(AccAddress)
-        {
+        //public Task<Account> GetAccountInfo(AccAddress)
+        //{
 
-        }
+        //}
     }
 }

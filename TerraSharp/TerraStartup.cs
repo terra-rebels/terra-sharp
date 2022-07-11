@@ -1,27 +1,26 @@
-﻿using Ninject.Modules;
-using Prism.Events;
-using TerraSharp.Client.Lcd;
-using TerraSharp.Configuration;
-using TerraSharp.Http.Util;
+﻿using Ninject;
+using System.Reflection;
 
 namespace TerraSharp
 {
-    public class TerraStartup : NinjectModule
+    public static class TerraStartup
     {
-        public override void Load()
+        public static StandardKernel Kernel { get; set; }
+
+        public static void InitializeKernel()
         {
-            TerraHttpClientFactory.InitializeClientFactory(); // HttpClientFactory
+            Kernel = new StandardKernel();
+            Kernel.Load(Assembly.GetExecutingAssembly());
+        }
 
-            // Services
-            this.Bind<IEventAggregator>().To<EventAggregator>().InSingletonScope(); /// Event Aggregator
+        public static T GetService<T>()
+        {
+            return Kernel.Get<T>();
+        }
 
-            // Api Configuration
-            this.Bind<APIRequester>().ToConstructor((e) => new APIRequester(""));
-            this.Bind<TerraRestfulService>().To<TerraRestfulService>().InSingletonScope();
-
-            // Http Services
-            this.Bind<TerraRestfulService>().To<TerraRestfulService>().InSingletonScope();
-            this.Bind<TerraHttpClientService>().To<TerraHttpClientService>().InSingletonScope();
+        public static IEnumerable<T> GetServices<T>()
+        {
+            return Kernel.GetAll<T>();
         }
     }
 }

@@ -1,12 +1,11 @@
-﻿using System.Net.Sockets;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Polly;
 using Polly.Extensions.Http;
 using TerraSharp.Constants;
-using TerraSharp.Extension.Logging.Serilog;
 using TerraSharp.Extension.Platform;
 using TerraSharp.Http;
+using TerraSharp.Http.Util;
 
 namespace TerraSharp.Configuration
 {
@@ -39,18 +38,10 @@ namespace TerraSharp.Configuration
             return serviceProvider.GetService<T>();
         }
 
-        private static bool CatchSocketException(SocketException socketIssue)
-        {
-            socketIssue.LogException(); // Log Any Exceptions in Serilog Data Store
-            return true;
-        }
-
         private static IAsyncPolicy<HttpResponseMessage> GetPollyRetryPolicies()
         {
             return HttpPolicyExtensions
                 .HandleTransientHttpError()
-                .OrInner<SocketException>((error) => CatchSocketException(error))
-                .Or<SocketException>((error) => CatchSocketException(error))
                 .WaitAndRetryAsync(3, (retryAttempt) => TimeSpan.FromSeconds(HttpBehaviourConstants.DefaultHttpTimeoutSeconds));
         }
 
@@ -67,11 +58,9 @@ namespace TerraSharp.Configuration
             return GetService<IHttpClientFactory>().CreateClient(TerraHttpClientNames.TERRAHTTP);
         }
 
-
         public static async void InitializeHttpClients()
         {
-            ContainerLocator.Container.Resolve<IRestfulService>().PrepareHttpClientFromConsumer(PollyHttpClientConfigurator.GetHttpClientFromFactory());
+            TerraStartup.GetService<TerraRestfulService>().PrepareHttpClientFromConsumer(GetHttpClientFromFactory());
         }
-
     }
 }

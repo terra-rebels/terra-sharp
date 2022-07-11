@@ -7,15 +7,13 @@ using TerraSharp.Constants;
 
 namespace TerraSharp.Http.Util
 {
-    public class TerraHttpClientService : IDisposable
+    public class TerraHttpClientService
     {
-        private TimeSpan httpClientTimeout;
-        public HttpClient httpClient;
+        private HttpClient httpClient;
 
         public void PrepareHttpClient(HttpClient httpClient)
         {
             this.httpClient = httpClient;
-            this.httpClientTimeout = TimeSpan.FromSeconds(HttpBehaviourConstants.DefaultHttpTimeoutSeconds); // Default Timeout
 
             // Add all default Headers
             this.httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(Mimes.JSON));
@@ -29,7 +27,7 @@ namespace TerraSharp.Http.Util
             {
                 if (!upperToken.IsCancellationRequested)
                 {
-                    upperToken.CancelAfter((int)this.httpClientTimeout.TotalMilliseconds);
+                    upperToken.CancelAfter(HttpBehaviourConstants.DefaultHttpTimeoutSeconds);
                     using (upperToken)
                     {
                         return await runOperation(upperToken);
@@ -38,7 +36,7 @@ namespace TerraSharp.Http.Util
             }
             else
             {
-                using (var tokenSource = new CancellationTokenSource(this.httpClientTimeout))
+                using (var tokenSource = new CancellationTokenSource(TimeSpan.FromSeconds(HttpBehaviourConstants.DefaultHttpTimeoutSeconds)))
                 {
                     return await runOperation(tokenSource);
                 }
@@ -78,31 +76,9 @@ namespace TerraSharp.Http.Util
             return await this.RunHttpOperation((source) => this.httpClient.PutAsync(requestUri, content, source.Token), upperToken);
         }
 
-        /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-        /// </summary>
-        public void Dispose()
-        {
-            this.Dispose(true);
-        }
-
-        /// <summary>
-        /// Releases unmanaged and - optionally - managed resources.
-        /// </summary>
-        /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
-        protected virtual void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                if (this.httpClient != null)
-                {
-                    this.httpClient.Dispose();
-                }
-            }
-        }
-
         public void ForceDisconnectAllClients()
         {
             this.httpClient.CancelPendingRequests();
         }
-    } }
+    }
+}

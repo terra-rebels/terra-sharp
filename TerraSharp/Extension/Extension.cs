@@ -10,13 +10,4 @@ namespace TerraSharp.Extension
     public class Extension
     {
     }
-
-    public static class NinjectContainerExtensions
-    {
-        public IKernel GetContainer()
-        {
-            return IKernel kernel = new StandardKernel();
-            var samurai = kernel.Get<Samurai>();
-        }
-    }
 }

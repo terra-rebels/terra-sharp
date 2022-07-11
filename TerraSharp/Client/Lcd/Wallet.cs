@@ -18,9 +18,9 @@ namespace TerraSharp.Client.Lcd
             this.key = key;
         }
 
-        public Task<AccountNumberArgs> AccountNumberAndSequence()
-        {
-            this.lcd.auth.
-        }
+        //public Task<AccountNumberArgs> AccountNumberAndSequence()
+        //{
+        //    this.lcd.auth.
+        //}
     }
 }

@@ -23,8 +23,10 @@ namespace TerraSharp.Util
         {
             using(SHA256 sha256 = SHA256.Create())
             {
-                return sha256.ComputeHash(Encoding.ASCII.GetBytes(Convert.ToBase64String(Encoding.ASCII.GetBytes(data)))).ToString().ToUpper();
+        //        return sha256.ComputeHash(Encoding.ASCII.GetBytes(Convert.ToBase64String(Encoding.ASCII.GetBytes(data)))).ToString().ToUpper();
             }
+
+            return "";
         }
 
         /**

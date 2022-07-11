@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using static TerraSharp.Globals.Exceptions;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using Axio
 
 namespace TerraSharp.Client.Lcd
 {

@@ -8,6 +8,5 @@ namespace TerraSharp.Util
 {
     public class Contract
     {
-        public string GetCodeId(BlockTxBroadcastResult txRsult)
     }
 }
