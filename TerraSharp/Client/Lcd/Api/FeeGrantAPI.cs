@@ -3,15 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TerraSharp.Client.Lcd.Args.LcdClient.FeeGrants;
+using TerraSharp.Core.Auth;
 
 namespace TerraSharp.Client.Lcd.Api
 {
-    public class FeeGrantAPI
+    public class FeeGrantAPI : BaseAPI
     {
-        private readonly APIRequester apiRequester;
-        public FeeGrantAPI(APIRequester apiRequester)
+        public FeeGrantAPI(APIRequester apiRequester) : base(apiRequester)
         {
-            this.apiRequester = apiRequester;
+        }
+
+        public Task<FeeGrantParamsArgs> GetAllowances(
+            AccAddress grantee,
+            APIParams<PaginationOptions> @params)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Allowance> GetSingleAllowance(
+            AccAddress granter,
+            AccAddress grantee)
+        {
+            throw new NotImplementedException();
         }
     }
 }

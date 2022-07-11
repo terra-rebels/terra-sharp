@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TerraSharp.Extension.StringExt;
 
-namespace TerraSharp.Core
+namespace TerraSharp.Client.Lcd.Args.LcdClient.Rewards
 {
-    public class PublicKey
+    public class Data
     {
-       
     }
 }

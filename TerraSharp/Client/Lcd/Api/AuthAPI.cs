@@ -7,17 +7,15 @@ using TerraSharp.Core.Auth;
 
 namespace TerraSharp.Client.Lcd.Api
 {
-    public class AuthAPI
+    public class AuthAPI : BaseAPI
     {
-        private readonly APIRequester apiRequester;
-        public AuthAPI(APIRequester apiRequester)
+        public AuthAPI(APIRequester apiRequester) : base(apiRequester)
         {
-            this.apiRequester = apiRequester;
         }
 
-        //public Task<Account> GetAccountInfo(AccAddress)
-        //{
-
-        //}
+        public Task<Account> GetAccountInfo<T>(AccAddress address, APIParams<T> @params)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

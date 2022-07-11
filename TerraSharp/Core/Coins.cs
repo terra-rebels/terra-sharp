@@ -6,13 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-
 namespace TerraSharp.Core
 {
     public class Coins<T> : JsonSerializer, numeric<T>
     {
         public T Value { get => Value; set => Value = value; }
-
         private Dictionary<string, Coins<T>>? _coins { get; set; }
         private string denomination { get; set; }
         private string name { get; set; }

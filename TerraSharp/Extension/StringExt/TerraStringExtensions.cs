@@ -48,5 +48,4 @@ namespace TerraSharp.Extension.StringExt
         public static Stream GetStreamFromText(string text) => new MemoryStream(GetBytesFromString(text));
     }
 
-    
 }

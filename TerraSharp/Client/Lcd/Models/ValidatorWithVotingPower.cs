@@ -1,10 +1,7 @@
-﻿namespace TerraSharp.Client.Lcd.Args.LcdClient
-{
-    public class LCDClientConfigArgs
-    {
-        public double? GasAdjustment { get; set; }
-    }
+﻿using TerraSharp.Core.Staking;
 
+namespace TerraSharp.Client.Lcd.Models
+{
     public class ValidatorWithVotingPower
     {
         public Validator ValidatorInfo { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TerraSharp.Key
 {
-    public class CLIKey
+    public abstract class CLIKey
     {
     }
 }

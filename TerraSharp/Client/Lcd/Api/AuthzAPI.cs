@@ -3,15 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TerraSharp.Core.Auth;
 
 namespace TerraSharp.Client.Lcd.Api
 {
-    public class AuthzAPI
+    public class AuthzAPI : BaseAPI
     {
-        private readonly APIRequester apiRequester;
-        public AuthzAPI(APIRequester apiRequester)
+        public AuthzAPI(APIRequester apiRequester) : base(apiRequester)
         {
-            this.apiRequester = apiRequester;
+        }
+
+        public Task<Account> GetGrants<T>(
+            AccAddress granter,
+            AccAddress grantee,
+            string? msgTypeUrl,
+            APIParams<T> @params)
+        {
+            throw new NotImplementedException();
         }
     }
 }
