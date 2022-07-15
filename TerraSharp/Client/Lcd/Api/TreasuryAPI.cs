@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TerraSharp.Client.Lcd.Args.LcdClient.Treasury;
-using TerraSharp.Constants.Http.Api.BetaV1;
 using TerraSharp.Core;
 
 namespace TerraSharp.Client.Lcd.Api

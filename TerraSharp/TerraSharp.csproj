@@ -28,8 +28,4 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Extension\Json\" />
-  </ItemGroup>
-
 </Project>

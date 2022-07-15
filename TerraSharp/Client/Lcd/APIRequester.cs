@@ -44,7 +44,7 @@ namespace TerraSharp.Client.Lcd
         {
             var url = computeEndpoint(endpoint);
             TaskCompletionSource<string> tcs = new TaskCompletionSource<string>();
-            await Task.Run(() => tcs.SetResult(APIRequesterHttpClient.GetAsync<string>(url).Result.Content.ToString()));
+         //   await Task.Run(() => tcs.SetResult(APIRequesterHttpClient.GetAsync<string>(url).Result.Content.ToString()));
             return tcs;
         }
 

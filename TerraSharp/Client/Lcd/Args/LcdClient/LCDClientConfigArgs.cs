@@ -7,7 +7,7 @@
 
     public class ValidatorWithVotingPower
     {
-        public Validator ValidatorInfo { get; set; }
+       // public Validator ValidatorInfo { get; set; }
         public int VotingPower { get; set; }
         public int ProposerPriority { get; set; }
     }

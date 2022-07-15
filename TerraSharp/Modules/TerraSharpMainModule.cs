@@ -3,7 +3,6 @@ using Prism.Events;
 using TerraSharp.Client;
 using TerraSharp.Client.Lcd;
 using TerraSharp.Client.Lcd.Api;
-using TerraSharp.Client.Lcd.Interfaces.LcdClient;
 using TerraSharp.Configuration;
 using TerraSharp.Http.Util;
 
@@ -32,7 +31,7 @@ namespace TerraSharp.Modules
         private void InitializeClientLcdApis()
         {
             //Lcd Client Services
-            this.Bind<ILCDClientConfig>().To<LocalTerra>().InSingletonScope();
+          //  this.Bind<ILCDClientConfig>().To<LocalTerra>().InSingletonScope();
 
             // Api Configuration
             this.Bind<APIRequester>().ToConstructor((e) => new APIRequester(""));

@@ -16,12 +16,12 @@ namespace TerraSharp.Key
         }
         public abstract Task<byte[]> Sign(byte[] payload);
 
-        public AccAddress AccAddress
-        {
-            get
-            {
-                return this.publicKey == null ? throw new Exception("Could not compute accAddress: missing rawAddress") : this.publicKey!.address
-            }
-        }
+        //public AccAddress AccAddress
+        //{
+        //    get
+        //    {
+        //        return this.publicKey == null ? throw new Exception("Could not compute accAddress: missing rawAddress") : this.publicKey!.address
+        //    }
+        //}
     }
 }

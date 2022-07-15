@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TerraSharp.Client.Lcd.Api;
-using TerraSharp.Client.Lcd.Interfaces.LcdClient;
+//using TerraSharp.Client.Lcd.Interfaces.LcdClient;
 
 namespace TerraSharp.Client.Lcd
 {
     public class LCDClient
     {
-        public readonly ILCDClientConfig config;
+        //public readonly ILCDClientConfig config;
         public readonly APIRequester apiRequester;
 
         public readonly AuthAPI auth;
@@ -33,7 +33,7 @@ namespace TerraSharp.Client.Lcd
 
 
         public LCDClient(
-            ILCDClientConfig config,
+        //    ILCDClientConfig config,
             APIRequester apiRequester,
             AuthAPI auth,
             BankAPI bank,
@@ -53,7 +53,7 @@ namespace TerraSharp.Client.Lcd
             IBCTransferAPI ibcTransfer,
             LCDUtils utils)
         {
-            this.config = config;
+         //   this.config = config;
             this.apiRequester = apiRequester;
             this.auth = auth;
             this.bank = bank;

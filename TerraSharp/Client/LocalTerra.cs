@@ -8,14 +8,14 @@ using TerraSharp.Modules;
 
 namespace TerraSharp.Client
 {
-    public class LocalTerra : LCDClient
+    public class LocalTerra
     {
         private readonly object LOCALTERRA_MNEMONICS = new
         {
 
         };
 
-        public LocalTerra() : base()
+        public LocalTerra()
         {
         }
     }

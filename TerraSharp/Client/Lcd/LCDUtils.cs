@@ -15,9 +15,9 @@ namespace TerraSharp.Client.Lcd
             this.lcd = lcd;
         }
 
-        public async Task<Coin> CalculateTax(Coin coin)
-        {
-            var rate = await this.lcd.treasury.tax
-        }
+        //public async Task<Coin> CalculateTax(Coin coin)
+        //{
+        //    var rate = await this.lcd.treasury.tax
+        //}
     }
 }
