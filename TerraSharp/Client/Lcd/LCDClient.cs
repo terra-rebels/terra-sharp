@@ -8,8 +8,11 @@ using TerraSharp.Client.Lcd.Api;
 
 namespace TerraSharp.Client.Lcd
 {
-    public class LCDClient
+    public abstract class LCDClient
     {
+        public string Url { get; set; }
+        public string ChainId { get; set; }
+
         //public readonly ILCDClientConfig config;
         public readonly APIRequester apiRequester;
 
@@ -53,7 +56,7 @@ namespace TerraSharp.Client.Lcd
             IBCTransferAPI ibcTransfer,
             LCDUtils utils)
         {
-         //   this.config = config;
+            //   this.config = config;
             this.apiRequester = apiRequester;
             this.auth = auth;
             this.bank = bank;
@@ -72,11 +75,20 @@ namespace TerraSharp.Client.Lcd
             this.tx = tx;
             this.ibcTransfer = ibcTransfer;
             this.utils = utils;
+
+            this.PrepareLCDClientInformation();
         }
 
         public Wallet CreateWallet(string key)
         {
             return new Wallet(this, key);
         }
+
+        protected virtual void PrepareLCDClientInformation()
+        {
+
+        }
+
+        protected abstract void PrepareClient(string url, string chainId);
     }
 }

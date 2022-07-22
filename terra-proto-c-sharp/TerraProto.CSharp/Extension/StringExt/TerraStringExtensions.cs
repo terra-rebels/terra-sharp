@@ -39,6 +39,13 @@ namespace TerraProto.CSharp.Extension.StringExt
         /// <param name="text"></param>
         /// <returns></returns>
         public static byte[] GetBytesFromString(string text) => Encoding.ASCII.GetBytes(text);
+
+        /// <summary>
+        /// Remove any Escape symbols from the string
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string EscapeSingleQuotes(string str) => str.Replace("/g,", "\\");
     }
 
 }

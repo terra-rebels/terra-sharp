@@ -19,7 +19,6 @@ namespace TerraProto.CSharp.Extension.StringExt
             get => TerraStringExtensions.GetBytesFromString(Convert.ToBase64String(Encoding.UTF8.GetBytes("22c1f7e2")));
         }
 
-
         public static byte[] EncodeUvarint(int @checked)
         {
             if (@checked > 127)
