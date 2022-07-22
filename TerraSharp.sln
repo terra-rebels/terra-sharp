@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TerraSharp", "TerraSharp\TerraSharp.csproj", "{298F5E51-A6EE-4E1B-99AF-DF23E35C29A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraSharp", "TerraSharp\TerraSharp.csproj", "{298F5E51-A6EE-4E1B-99AF-DF23E35C29A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TerraSharpTestExecutable", "TerraSharpTestExecutable\TerraSharpTestExecutable.csproj", "{AE2F1AA9-8DF1-405E-A562-3A66953E6114}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraSharpTestExecutable", "TerraSharpTestExecutable\TerraSharpTestExecutable.csproj", "{AE2F1AA9-8DF1-405E-A562-3A66953E6114}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{E58980E7-4A68-4F95-B6E7-A2504A8F20AD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraProto.CSharp", "terra-proto-c-sharp\TerraProto.CSharp\TerraProto.CSharp.csproj", "{190E2253-B14C-4072-8B0F-0AA8F183EC61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +25,16 @@ Global
 		{AE2F1AA9-8DF1-405E-A562-3A66953E6114}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE2F1AA9-8DF1-405E-A562-3A66953E6114}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE2F1AA9-8DF1-405E-A562-3A66953E6114}.Release|Any CPU.Build.0 = Release|Any CPU
+		{190E2253-B14C-4072-8B0F-0AA8F183EC61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{190E2253-B14C-4072-8B0F-0AA8F183EC61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{190E2253-B14C-4072-8B0F-0AA8F183EC61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{190E2253-B14C-4072-8B0F-0AA8F183EC61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{190E2253-B14C-4072-8B0F-0AA8F183EC61} = {E58980E7-4A68-4F95-B6E7-A2504A8F20AD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C8EC30CC-8752-47D9-92D6-884596B88E0A}

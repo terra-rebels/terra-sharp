@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\terra-proto-c-sharp\TerraProto.CSharp\TerraProto.CSharp.csproj" />
     <ProjectReference Include="..\TerraSharp\TerraSharp.csproj" />
   </ItemGroup>
 
